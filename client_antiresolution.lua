@@ -4,9 +4,8 @@ local lastFrozenVehicle = 0
 local function isBlocked()
     local ratio = GetAspectRatio(false)
     if ratio <= 0.0 then
-        return false -- Auto → autorisé
+        return false
     end
-    -- Bloquer uniquement le 4:3
     return math.abs(ratio - (4.0/3.0)) < 0.02
 end
 
@@ -47,7 +46,6 @@ CreateThread(function()
             print("^1Changez votre résolution")            
             Wait(0)
         else
-            -- Toujours défreeze si non bloqué
             local ped = PlayerPedId()
             FreezeEntityPosition(ped, false)
             if lastFrozenVehicle ~= 0 and DoesEntityExist(lastFrozenVehicle) then
@@ -58,3 +56,4 @@ CreateThread(function()
         end
     end
 end)
+
