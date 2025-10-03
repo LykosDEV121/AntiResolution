@@ -4,10 +4,11 @@ version '1.0.0'
 lua54 'yes'
 
 Contributor {
-  'RushCorpDEV'
+  'LykosDEV121'
 }
 
 author 'Lykos'
 client_script 'client_antiresolution.lua'
+
 
 
